@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Pong Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
             /* appBar: AppBar(
               title: Text('Simple Pong'),
             ), */
+            backgroundColor: Colors.black54,
             body: SafeArea(
-          child: Pong(),
-        )));
+              child: Pong(),
+            )));
   }
 }

@@ -12,7 +12,7 @@ class Bat extends StatelessWidget {
         width: width,
         height: height,
         decoration: new BoxDecoration(
-          color: Colors.blue[900],
+          color: Colors.amber[400],
         ));
   }
 }

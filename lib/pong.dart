@@ -161,17 +161,18 @@ class _PongState extends State<Pong> with SingleTickerProviderStateMixin {
       print("posX - height ${posX + batPosition - (diameter / 2)}");
       print("batPos $height");
 
-      if ((posX + batPosition - (diameter / 2)) > height &&
-          (posX + batPosition - (diameter / 2)) < (height + batHeight)) {
-        hDir = Direction.right;
-        randY = randomNumber();
-        safeSetState(() {
+      /* if ((posX + batPosition - (diameter / 2)) > height &&
+          (posX + batPosition - (diameter / 2)) < (height + batHeight)) { */
+      hDir = Direction.right;
+      randY = randomNumber();
+      /* safeSetState(() {
           score++;
-        });
-      } else {
+        }); */
+      //}
+      /* else {
         // controller.stop();
         // showMessage(context);
-      }
+      } */
     }
     if (posY >= width - diameter && hDir == Direction.right) {
       hDir = Direction.left;
@@ -209,6 +210,13 @@ class _PongState extends State<Pong> with SingleTickerProviderStateMixin {
 
       return Stack(
         children: <Widget>[
+          Positioned(
+              bottom: 5,
+              right: 0,
+              child: Text(
+                "Sysquare India PVT. LTD.",
+                style: TextStyle(color: Colors.white),
+              )),
           Positioned(
               top: 0, right: 24, child: Text('Score: ' + score.toString())),
           Positioned(child: Ball(), top: posX, left: posY),
